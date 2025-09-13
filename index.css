@@ -240,3 +240,177 @@ nav ul li a:hover {
   }
 }
 
+/* Team Card Styling */
+.team-card {
+  max-width: 900px;
+  padding: 2.5rem 3rem;
+  margin: 3rem auto; /* space between About Us and Our Team */
+  text-align: center;
+}
+
+/* Team Members Container */
+.team-members {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* responsive wrap on smaller screens */
+}
+
+/* Individual Team Member Card */
+.team-member {
+  flex: 1 1 250px; /* grow/shrink and min width */
+  background: rgba(248, 243, 243, 0.9);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.team-member h3 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  color: #333;
+  line-height: 1.5;
+  margin: 0.3rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-members {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Center the contact form submit button and add spacing */
+#contact_form .book-btn {
+  display: block;          /* ensures it’s a block element */
+  margin: 2rem auto 0 auto; /* 2rem top margin, centered horizontally */
+  padding: 0.8rem 2rem;     /* adjust padding for better button size */
+  width: auto;             /* don’t stretch full width */
+  text-align: center;      /* centers the text inside the button */
+}
+
+/* Contact Card Adjustments */
+.contact-card {
+  max-width: 750px;
+  padding: 3rem 3rem 4rem 3rem; /* more bottom padding for button space */
+  margin: 3rem auto;
+  text-align: center;
+}
+
+/* Contact Form Inputs and Textarea */
+#contact_form input,
+#contact_form textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.5rem; /* space between fields */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#contact_form input:focus,
+#contact_form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.6);
+}
+
+/* Form Labels */
+#contact_form label {
+  font-weight: bold;
+  color: #1e3a8a;
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Form Submit Button - overrides global .book-btn */
+#contact_form .book-btn {
+    position: static;           /* remove absolute positioning */
+    display: block;             /* allows margin auto centering */
+    margin: 2rem auto 0 auto;   /* 2rem top margin, centered horizontally */
+    padding: 0.8rem 2rem;
+    width: auto;                /* do not stretch full width */
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#contact_form .book-btn:hover {
+    background-color: #3b82f6;
+}
+
+/* Our Team Card Adjustments */
+.team-card {
+  max-width: 950px;       /* slightly wider than About Us card */
+  padding: 3rem 3rem 4rem 3rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+/* Team Members Container */
+.team-members {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* stack on smaller screens */
+}
+
+/* Individual Team Member Card */
+.team-member {
+  flex: 1 1 280px; /* responsive sizing */
+  background: rgba(248, 243, 243, 0.9);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for cards */
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Member Name */
+.team-member h3 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Member Details */
+.team-member p {
+  color: #333;
+  line-height: 1.5;
+  margin: 0.4rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-members {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .team-member {
+    padding: 1.5rem 1rem;
+  }
+}
+
+
+
