@@ -25,7 +25,7 @@ function searchKeyword(keyword) {
   }
 }
 
-//displays results on the page
+
 function displayResults(results, keyword) {
   // Remove previous results
   const container = document.getElementById('results-container');
@@ -43,7 +43,6 @@ function displayResults(results, keyword) {
     // Different structures for countries vs beaches/temples
     let contentHTML = '';
     if (item.cities) {
-      // Country: include cities
       const citiesHTML = item.cities.map(city => `
         <div class="place">
           <h3>${city.name}</h3>
@@ -66,18 +65,17 @@ function displayResults(results, keyword) {
   });
 }
 
-// 4. Event listener for Search button
+
 document.getElementById('search_button').addEventListener('click', () => {
   const keyword = document.getElementById('search_bar').value.trim();
   const results = searchKeyword(keyword);
   displayResults(results, keyword);
 });
 
-// Optional: Reset button
 document.getElementById('reset_button').addEventListener('click', () => {
   document.getElementById('search_bar').value = '';
   document.getElementById('results-container').innerHTML = '';
 });
 
-// 5. Initial load
+//Initial load
 loadTravelData();
