@@ -1,416 +1,439 @@
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: url("https://media.istockphoto.com/id/527115069/photo/collage-of-printed-travel-images.jpg?s=2048x2048&w=is&k=20&c=KnhqhioTkckEpl5QOIEWFKRIFATbIRw_OKj3LZPoaOo=")
-    no-repeat center center fixed;
-  background-size: cover;
-  font-family: Arial, sans-serif;
-
-  /* Optional: dark overlay for readability */
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(30, 58, 138, 0.5); /* semi-transparent navy overlay */
-  z-index: -1; /* push it behind content */
-}
-
-/* Navbar styling */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(248, 243, 243, 0.6); /* transparent black so bg shows through */
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  margin: 1rem;
-}
-
-nav h1 {
-    color: #1e3a8a;
-}
-
-nav h3 {
-  color: #ffffff;
-  margin: 0;
-  font-size: 1.5rem;
-  flex: 1;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 1rem;
-  align-items: center;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-nav ul li a:hover {
-  background-color: rgba(59, 130, 246, 0.8);
-}
-
-/* Search bar */
-#search_bar {
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-  outline: none;
-}
-
-#search_bar:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 5px rgba(37, 99, 235, 0.6);
-}
-
-/* Buttons */
-#search_button,
-#reset_button {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #2563eb;
-  color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-#search_button:hover,
-#reset_button:hover {
-  background-color: #3b82f6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url("https://media.istockphoto.com/id/527115069/photo/collage-of-printed-travel-images.jpg?s=2048x2048&w=is&k=20&c=KnhqhioTkckEpl5QOIEWFKRIFATbIRw_OKj3LZPoaOo=")
+      no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+  
+    /* Optional: dark overlay for readability */
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 58, 138, 0.5); /* semi-transparent navy overlay */
+    z-index: -1; /* push it behind content */
+  }
+  
+  /* Navbar styling */
   nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  #search_bar {
-    width: 100%;
-  }
-}
-
-/* Intro Card */
-.intro-card {
-  max-width: 700px;
-  margin: 6rem auto;
-  padding: 2.5rem;
-  background:rgba(248, 243, 243, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  position: relative;
-}
-
-/* Title */
-.intro-card h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  color: #1e3a8a;
-}
-
-/* Paragraph */
-.intro-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-/* Social Icons */
-.social-icons {
-    margin-bottom: 2.5rem;
-  }
-  
-  .social-icons a {
-    margin: 0 0.6rem;
-    font-size: 1.5rem;
-    color: #1e3a8a;
-    transition: color 0.3s, transform 0.2s;
-  }
-  
-  .social-icons a:hover {
-    color: #2563eb;
-    transform: scale(1.2);
-  }
-
-
-
-/* Social Sidebar */
-.social-sidebar {
-  position: fixed;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 1000;
-}
-
-/* Icon links */
-.social-sidebar a {
-    font-size: 1.8rem;
-    width: 50px;
-    height: 50px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    color: #fff; /* icon color */
-    text-decoration: none;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-
-/* Brand colors */
-.social-sidebar a.twitter { background: #1da1f2; }
-.social-sidebar a.facebook { background: #1877f2; }
-.social-sidebar a.instagram { background: #e72ded; }
-.social-sidebar a.youtube { background: #f41212; }
-
-/* Hover effect: slightly darker and scale up */
-.social-sidebar a:hover {
-    transform: scale(1.2);
-    filter: brightness(0.9);
+    justify-content: space-between;
+    background: rgba(248, 243, 243, 0.6); /* transparent black so bg shows through */
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 1rem;
   }
   
-
-/* Book Button */
-.book-btn {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  padding: 0.7rem 1.5rem;
-  background: #2563eb;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out;
-}
-
-.book-btn:hover {
-  background: #3b82f6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+  nav h1 {
+      color: #1e3a8a;
+  }
+  
+  nav h3 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  nav ul li a:hover {
+    background-color: rgba(59, 130, 246, 0.8);
+  }
+  
+  /* Search bar */
+  #search_bar {
+    padding: 0.4rem 2.8rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    outline: none;
+  }
+  
+  #search_bar:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.6);
+  }
+  
+  /* Buttons */
+  #search_button,
+  #reset_button {
+    padding: 0.4rem 1.8rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #search_button:hover,
+  #reset_button:hover {
+    background-color: #3b82f6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+    }
+  
+    #search_bar {
+      width: 120%;
+    }
+  }
+  
+  /* Intro Card */
   .intro-card {
-    margin: 3rem 1rem;
-    padding: 2rem;
-  }
-
-  .intro-card h1 {
-    font-size: 1.8rem;
-  }
-
-  .intro-card p {
-    font-size: 1rem;
-  }
-}
-
-/* Team Card Styling */
-.team-card {
-  max-width: 900px;
-  padding: 2.5rem 3rem;
-  margin: 3rem auto; /* space between About Us and Our Team */
-  text-align: center;
-}
-
-/* Team Members Container */
-.team-members {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap; /* responsive wrap on smaller screens */
-}
-
-/* Individual Team Member Card */
-.team-member {
-  flex: 1 1 250px; /* grow/shrink and min width */
-  background: rgba(248, 243, 243, 0.9);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
-
-.team-member h3 {
-  color: #1e3a8a;
-  margin-bottom: 0.5rem;
-}
-
-.team-member p {
-  color: #333;
-  line-height: 1.5;
-  margin: 0.3rem 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .team-members {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
-/* Center the contact form submit button and add spacing */
-#contact_form .book-btn {
-  display: block;          /* ensures it’s a block element */
-  margin: 2rem auto 0 auto; /* 2rem top margin, centered horizontally */
-  padding: 0.8rem 2rem;     /* adjust padding for better button size */
-  width: auto;             /* don’t stretch full width */
-  text-align: center;      /* centers the text inside the button */
-}
-
-/* Contact Card Adjustments */
-.contact-card {
-  max-width: 750px;
-  padding: 3rem 3rem 4rem 3rem; /* more bottom padding for button space */
-  margin: 3rem auto;
-  text-align: center;
-}
-
-/* Contact Form Inputs and Textarea */
-#contact_form input,
-#contact_form textarea {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  margin-bottom: 1.5rem; /* space between fields */
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-#contact_form input:focus,
-#contact_form textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 5px rgba(37, 99, 235, 0.6);
-}
-
-/* Form Labels */
-#contact_form label {
-  font-weight: bold;
-  color: #1e3a8a;
-  display: block;
-  text-align: left;
-  margin-bottom: 0.5rem;
-}
-
-/* Contact Form Submit Button - overrides global .book-btn */
-#contact_form .book-btn {
-    position: static;           /* remove absolute positioning */
-    display: block;             /* allows margin auto centering */
-    margin: 2rem auto 0 auto;   /* 2rem top margin, centered horizontally */
-    padding: 0.8rem 2rem;
-    width: auto;                /* do not stretch full width */
+    max-width: 700px;
+    margin: 6rem auto;
+    padding: 2.5rem;
+    background:rgba(248, 243, 243, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
+    position: relative;
+  }
+  
+  /* Title */
+  .intro-card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #1e3a8a;
+  }
+  
+  /* Paragraph */
+  .intro-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  /* Social Icons */
+  .social-icons {
+      margin-bottom: 2.5rem;
+    }
+    
+    .social-icons a {
+      margin: 0 0.6rem;
+      font-size: 1.5rem;
+      color: #1e3a8a;
+      transition: color 0.3s, transform 0.2s;
+    }
+    
+    .social-icons a:hover {
+      color: #2563eb;
+      transform: scale(1.2);
+    }
+  
+  
+  
+  /* Social Sidebar */
+  .social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+  }
+  
+  /* Icon links */
+  .social-sidebar a {
+      font-size: 1.8rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff; /* icon color */
+      text-decoration: none;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+  
+  /* Brand colors */
+  .social-sidebar a.twitter { background: #1da1f2; }
+  .social-sidebar a.facebook { background: #1877f2; }
+  .social-sidebar a.instagram { background: #e72ded; }
+  .social-sidebar a.youtube { background: #f41212; }
+  
+  /* Hover effect: slightly darker and scale up */
+  .social-sidebar a:hover {
+      transform: scale(1.2);
+      filter: brightness(0.9);
+    }
+    
+  
+  /* Book Button */
+  .book-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background: #2563eb;
+    color: #fff;
     font-size: 1rem;
+    font-weight: bold;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #2563eb;
-    color: #fff;
-    font-weight: bold;
-    transition: background-color 0.2s ease-in-out;
-}
-
-#contact_form .book-btn:hover {
-    background-color: #3b82f6;
-}
-
-/* Our Team Card Adjustments */
-.team-card {
-  max-width: 950px;       /* slightly wider than About Us card */
-  padding: 3rem 3rem 4rem 3rem;
-  margin: 3rem auto;
-  text-align: center;
-}
-
-/* Team Members Container */
-.team-members {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap; /* stack on smaller screens */
-}
-
-/* Individual Team Member Card */
-.team-member {
-  flex: 1 1 280px; /* responsive sizing */
-  background: rgba(248, 243, 243, 0.9);
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Hover effect for cards */
-.team-member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* Member Name */
-.team-member h3 {
-  color: #1e3a8a;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-}
-
-/* Member Details */
-.team-member p {
-  color: #333;
-  line-height: 1.5;
-  margin: 0.4rem 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .book-btn:hover {
+    background: #3b82f6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .intro-card {
+      margin: 3rem 1rem;
+      padding: 2rem;
+    }
+  
+    .intro-card h1 {
+      font-size: 1.8rem;
+    }
+  
+    .intro-card p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Team Card Styling */
+  .team-card {
+    max-width: 900px;
+    padding: 2.5rem 3rem;
+    margin: 3rem auto; /* space between About Us and Our Team */
+    text-align: center;
+  }
+  
+  /* Team Members Container */
   .team-members {
-    flex-direction: column;
-    gap: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* responsive wrap on smaller screens */
   }
-
+  
+  /* Individual Team Member Card */
   .team-member {
-    padding: 1.5rem 1rem;
+    flex: 1 1 250px; /* grow/shrink and min width */
+    background: rgba(248, 243, 243, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
   }
-}
-
-
-
+  
+  .team-member h3 {
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-member p {
+    color: #333;
+    line-height: 1.5;
+    margin: 0.3rem 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .team-members {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Center the contact form submit button and add spacing */
+  #contact_form .book-btn {
+    display: block;          /* ensures it’s a block element */
+    margin: 2rem auto 0 auto; /* 2rem top margin, centered horizontally */
+    padding: 0.8rem 2rem;     /* adjust padding for better button size */
+    width: auto;             /* don’t stretch full width */
+    text-align: center;      /* centers the text inside the button */
+  }
+  
+  /* Contact Card Adjustments */
+  .contact-card {
+    max-width: 750px;
+    padding: 3rem 3rem 4rem 3rem; /* more bottom padding for button space */
+    margin: 3rem auto;
+    text-align: center;
+  }
+  
+  /* Contact Form Inputs and Textarea */
+  #contact_form input,
+  #contact_form textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.5rem; /* space between fields */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  #contact_form input:focus,
+  #contact_form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.6);
+  }
+  
+  /* Form Labels */
+  #contact_form label {
+    font-weight: bold;
+    color: #1e3a8a;
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Contact Form Submit Button - overrides global .book-btn */
+  #contact_form .book-btn {
+      position: static;           /* remove absolute positioning */
+      display: block;             /* allows margin auto centering */
+      margin: 2rem auto 0 auto;   /* 2rem top margin, centered horizontally */
+      padding: 0.8rem 2rem;
+      width: auto;                /* do not stretch full width */
+      text-align: center;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #2563eb;
+      color: #fff;
+      font-weight: bold;
+      transition: background-color 0.2s ease-in-out;
+  }
+  
+  #contact_form .book-btn:hover {
+      background-color: #3b82f6;
+  }
+  
+  /* Our Team Card Adjustments */
+  .team-card {
+    max-width: 950px;       /* slightly wider than About Us card */
+    padding: 3rem 3rem 4rem 3rem;
+    margin: 3rem auto;
+    text-align: center;
+  }
+  
+  /* Team Members Container */
+  .team-members {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* stack on smaller screens */
+  }
+  
+  /* Individual Team Member Card */
+  .team-member {
+    flex: 1 1 280px; /* responsive sizing */
+    background: rgba(248, 243, 243, 0.9);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Hover effect for cards */
+  .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Member Name */
+  .team-member h3 {
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  /* Member Details */
+  .team-member p {
+    color: #333;
+    line-height: 1.5;
+    margin: 0.4rem 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .team-members {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .team-member {
+      padding: 1.5rem 1rem;
+    }
+  }
+  .results-container {
+      display: flex;
+      flex-direction: column; /* one card per row */
+      gap: 20px;
+      padding: 20px;
+  }
+  
+  .result-card {
+      border: 1px solid #0077b6;
+      border-radius: 10px;
+      padding: 0; /* remove inner padding so image can stretch */
+      background-color: #90e0ef;
+      width: 100%; /* full width */
+  }
+  
+  .result-card img {
+      width: 100%;       /* image fills the card */
+      height: auto;      /* keep aspect ratio */
+      border-radius: 0;  /* optional: remove round corners */
+      display: block;
+  }
+  
+  
+  
+  
+  

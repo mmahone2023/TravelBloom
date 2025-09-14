@@ -3,7 +3,7 @@ let travelData = {};
 
 async function loadTravelData() {
   try {
-    const response = await fetch('./travel_data.json'); 
+    const response = await fetch('travel_recommendation_api.json'); 
     travelData = await response.json();
     console.log('Travel data loaded:', travelData); 
   } catch (error) {
@@ -36,6 +36,8 @@ function displayResults(results, keyword) {
     return;
   }
 
+
+  
   results.forEach(item => {
     const card = document.createElement('div');
     card.className = 'result-card';
